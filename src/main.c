@@ -9,7 +9,7 @@
 #include "ina219.h"
 #include "mpu6050.h"
 #include "ahrsimu.h"
-#include "minmea/minmea.h"
+#include "minmea.h"
 #include "gps.h"
 #include "ui.h"
 
