@@ -74,6 +74,7 @@ static void Periph_Init(void)
     USART1_Init(&husart1);
 
     BMP280_Init(&hbmp280, &hi2c1, BMP280_I2C_ADDR);
+    INA219_Init(&hina219, &hi2c1, INA219_ADDRESS);
 
     if (MPU6050_Init(&mpu6050, &hi2c0, MPU6050_Device_0, MPU6050_Accelerometer_2G, MPU6050_Gyroscope_250s) == MPU6050_Result_Ok)
     {
@@ -190,5 +191,5 @@ void Process_BMP_Data()
  */
 void Process_INA219_Data()
 {
-    UI_SendINA219MSG(&husart1, INA219_ReadBusVoltage(&hina219), INA219_ReadCurrent(&hina219), INA219_ReadCurrent(&hina219));
+    UI_SendINA219MSG(&husart1, INA219_ReadBusVoltage(&hina219), INA219_ReadCurrent(&hina219), INA219_ReadPower(&hina219));
 }
