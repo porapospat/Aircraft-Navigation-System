@@ -63,9 +63,7 @@ int main()
     }
 }
 
-/**
- * @brief  Инициализация периферии 
- */
+/** @brief  Инициализация периферии */
 static void Periph_Init(void)
 { 
     I2C0_Init(&hi2c0);
@@ -83,9 +81,7 @@ static void Periph_Init(void)
     }
 }
 
-/**
- * @brief  Обработчик прерываний 
- */
+/** @brief  Обработчик прерываний */
 void trap_handler()
 {
     if (EPIC_CHECK_UART_0())
@@ -147,9 +143,7 @@ void Process_MPU6050_Data(void)
     }
 }
 
-/**
- * @brief  Разбор GGA-предложения от GPS и отправка координат.
- */
+/** @brief  Разбор GGA-предложения от GPS и отправка координат.*/
 void Process_GGA_Data(void)
 {
     if (GPS_GetSentence(sentence, MAX_SENTENCE_LENGTH))
@@ -171,9 +165,7 @@ void Process_GGA_Data(void)
     }
 }
 
-/**
- * @brief Отправка данных с датчика BMP280 - температуры и давления
- */
+/** @brief Отправка данных с датчика BMP280 - температуры и давления */
 void Process_BMP_Data()
 {
     int32_t pressure = 0;
@@ -186,9 +178,7 @@ void Process_BMP_Data()
     }    
 }
 
-/**
- * @brief Отправка данных с датчика INA219 — напряжения, тока и мощности
- */
+/** @brief Отправка данных с датчика INA219 — напряжения, тока и мощности */
 void Process_INA219_Data()
 {
     UI_SendINA219MSG(&husart1, INA219_ReadBusVoltage(&hina219), INA219_ReadCurrent(&hina219), INA219_ReadPower(&hina219));

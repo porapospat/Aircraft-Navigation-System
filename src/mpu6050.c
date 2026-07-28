@@ -6,19 +6,15 @@
 /* Includes ------------------------------------------------------------------*/
 #include "mpu6050.h"
 
-/* Private define ------------------------------------------------------------*/
+/* Defines ------------------------------------------------------------------*/
 
-/** 
- * @brief Чувствительность гироскопа 
- */
+/** @brief Чувствительность гироскопа */
 #define MPU6050_GYRO_SENS_250   ((float)131)
 #define MPU6050_GYRO_SENS_500   ((float)65.5)
 #define MPU6050_GYRO_SENS_1000  ((float)32.8)
 #define MPU6050_GYRO_SENS_2000  ((float)16.4)
 
-/** 
- * @brief Чувствительность акселерометра 
- */
+/** @brief Чувствительность акселерометра */
 #define MPU6050_ACCE_SENS_2     ((float)16384)
 #define MPU6050_ACCE_SENS_4     ((float)8192)
 #define MPU6050_ACCE_SENS_8     ((float)4096)
@@ -28,7 +24,6 @@
 static int32_t median3(int32_t a, int32_t b, int32_t c);
 
 /* Private functions ---------------------------------------------------------*/
-
 /**
  * @brief                             Инициализация MPU6050
  * @param  mpu6050                    Указатель на структуру данных MPU6050
@@ -66,7 +61,6 @@ MPU6050_Result_t MPU6050_Init(MPU6050_t *mpu6050, I2C_HandleTypeDef *hi2c,
     }
     HAL_DelayMs(100);
 
-    /* Пробуждение */
     if (I2C_write_byte(mpu6050->hi2c, mpu6050->addr, MPU6050_PWR_MGMT_1, 0x00) != HAL_OK)
     {
         return MPU6050_Result_DeviceNotConnected;

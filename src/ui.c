@@ -7,9 +7,9 @@
 #include "ui.h"
 
 /* Private variables ---------------------------------------------------------*/
-static sGPS_MSG GPS_MSG_TX; /* Буфер передачи пакета GPS */
-static sMPU_MSG MPU_MSG_TX; /* Буфер передачи пакета MPU6050 */
-static sBMP_MSG BMP_MSG_TX; /* Буфер передачи пакета BMP280 */
+static sGPS_MSG GPS_MSG_TX;       /* Буфер передачи пакета GPS */
+static sMPU_MSG MPU_MSG_TX;       /* Буфер передачи пакета MPU6050 */
+static sBMP_MSG BMP_MSG_TX;       /* Буфер передачи пакета BMP280 */
 static sINA219_MSG INA219_MSG_TX; /* Буфер передачи пакета INA219 */
 
 /* Private functions ---------------------------------------------------------*/

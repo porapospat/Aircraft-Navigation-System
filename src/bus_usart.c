@@ -331,9 +331,7 @@ static uint8_t TxGet(void)
    return ch;
 }
 
-/**
- * @brief Попытка отправить кадр без восстановления
- */
+/** @brief Попытка отправить кадр без восстановления */
 static uint8_t UART_SendFrameTry(USART_HandleTypeDef *husart, uint8_t *str, uint32_t len)
 {
     for (uint32_t i = 0; i < len; i++)
@@ -346,9 +344,7 @@ static uint8_t UART_SendFrameTry(USART_HandleTypeDef *husart, uint8_t *str, uint
     return true;
 }
 
-/**
- * @brief Восстановление UART TX после ошибки (переинициализация + очистка TX буфера)
- */
+/** @brief Восстановление UART TX после ошибки (переинициализация + очистка TX буфера) */
 static void UART_TxRecover(USART_HandleTypeDef *husart)
 {
     HAL_USART_TXE_DisableInterrupt(husart);
